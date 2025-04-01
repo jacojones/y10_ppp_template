@@ -71,8 +71,8 @@ When you’re ready, type any character. """)
         guess = input(f"{x}. {lyric}")
         if guess == song_name[num]:
             print("Correct!")
-            score += 1
-    print(lyric)
+            global score
+
 
 def avid():
     input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
