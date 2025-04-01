@@ -1,7 +1,8 @@
 # testing
 from random import randint
 from random import shuffle
-import sleep
+
+score = 0
 def menu():
     valid = False
     while valid == False:
@@ -67,7 +68,9 @@ When you’re ready, type any character. """)
     for i in range(4):
         x = 1
         guess = input(f"{x}. {lyric}")
-
+        if guess == song_name[lyric]:
+            print("Correct!")
+            score += 1
     print(lyric)
 
 def avid():
