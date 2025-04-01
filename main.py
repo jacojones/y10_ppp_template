@@ -1,4 +1,6 @@
 # testing
+from random import randint
+from random import shuffle
 def menu():
     valid = False
     while valid == False:
@@ -36,15 +38,30 @@ def difficulty():
 4. Lyrical Genuis: 🤯 For the best of the best, the most challenging of them all. Your lyrics are scrambled, slowly loads in, and you are given 10 seconds to guess the song. 
 
 """))
+            if difficulty == 1:
+                easy()
+                valid == True
+            if difficulty == 2:
+                avid()
+                valid == True
+            if difficulty == 3:
+                fanboy()
+                valid == True
+            if difficulty == 4:
+                lyrical()
+                valid == True
         except ValueError:
             print("Invalid Input. Please input a value from 1-4.")
 
 
 def easy():
-    print("This will be the ")
-menu()
-
-
+    print("This is the easy difficulty")
+def avid():
+    print("This will be the avid-listener difficulty")
+def fanboy():
+    print("This will be the fanboy difficulty")
+def lyrical():
+    print("This will be the lyrical genuis difficulty")
 # hello blah blah blah
 
 # you are meant to auto commit
