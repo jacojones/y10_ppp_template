@@ -36,25 +36,21 @@ def difficulty():
 
 3. Fanboy: 😅 More challenging than the last two with a different game style. Your lyrics are scrambled around, and you’re given 10 seconds to guess what song.  
 
-4. Lyrical Genuis: 🤯 For the best of the best, the most challenging of them all. Your lyrics are scrambled, slowly loads in, and you are given 10 seconds to guess the song. 
+4. Lyrical Genius: 🤯 For the best of the best, the most challenging of them all. Your lyrics are scrambled, slowly loads in, and you are given 10 seconds to guess the song. 
 
 """))
             if difficulty == 1:
-                valid == True
+                valid = True
                 easy()
-
             elif difficulty == 2:
-                valid == True
+                valid = True
                 avid()
-
             elif difficulty == 3:
-                valid == True          
+                valid = True          
                 fanboy()
-
             elif difficulty == 4:
-                valid == True              
+                valid = True              
                 lyrical()
-
             else:
                 print("Invalid Input. Please input a value from 1-4.")
         except ValueError:
@@ -68,7 +64,7 @@ def avid():
 def fanboy():
     print("This will be the fanboy difficulty")
 def lyrical():
-    print("This will be the lyrical genuis difficulty")
+    print("This will be the lyrical genius difficulty")
 
 menu()
 # hello blah blah blah
