@@ -85,7 +85,7 @@ def lyrical():
     print("This will be the lyrical genius difficulty")
 
 lyrics = ["song 1", "song 2", "song 3"]
-
+song_name = ["1", "2", "3", "4"]
 menu()
 # hello blah blah blah
 
