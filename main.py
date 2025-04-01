@@ -70,7 +70,8 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 
 When you’re ready, type any character. """)
 def fanboy():
-    print("This will be the fanboy difficulty")
+    input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
+If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  """)
 def lyrical():
     print("This will be the lyrical genius difficulty")
 
