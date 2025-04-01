@@ -17,9 +17,10 @@ def menu():
             elif choice == 2:
                 valid = True
                 print("ok")
-            else:
-                valid = True
+            elif choice == 3:
                 quit
+            else:
+                print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
             print("Invalid input. Please input a value inbetween 1-3.")
 
@@ -62,6 +63,8 @@ def fanboy():
     print("This will be the fanboy difficulty")
 def lyrical():
     print("This will be the lyrical genuis difficulty")
+
+menu()
 # hello blah blah blah
 
 # you are meant to auto commit
