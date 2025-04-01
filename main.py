@@ -58,9 +58,17 @@ def difficulty():
 
 
 def easy():
-    print("This is the easy difficulty")
+    input("""This version of guess-that-song, you are given a line of lyrics, and you must guess within 10 seconds.
+If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
+
+When you’re ready, type any character. """)
+
 def avid():
-    print("This will be the avid-listener difficulty")
+    input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
+The longer it takes you to guess, the lower the score you get. 
+If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
+
+When you’re ready, type any character. """)
 def fanboy():
     print("This will be the fanboy difficulty")
 def lyrical():
