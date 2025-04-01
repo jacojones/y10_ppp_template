@@ -12,7 +12,7 @@ def menu():
 """))
             if choice == 1:
                 valid = True
-                print("ok")
+                difficulty()
 
             elif choice == 2:
                 valid = True
@@ -51,6 +51,8 @@ def difficulty():
             if difficulty == 4:
                 lyrical()
                 valid == True
+            else:
+                print("Invalid Input. Please input a value from 1-4.")
         except ValueError:
             print("Invalid Input. Please input a value from 1-4.")
 
