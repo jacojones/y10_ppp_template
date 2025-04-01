@@ -5,5 +5,10 @@ def menu():
 2. Leaderboard 🏅 
 3. Quit 👋""")
     if choice == 1:
-        
+        pass
+
 menu()
+
+# hello blah blah blah
+
+# you are meant to auto commit
