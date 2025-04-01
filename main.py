@@ -43,15 +43,15 @@ def difficulty():
                 valid == True
                 easy()
 
-            if difficulty == 2:
+            elif difficulty == 2:
                 valid == True
                 avid()
 
-            if difficulty == 3:
+            elif difficulty == 3:
                 valid == True          
                 fanboy()
 
-            if difficulty == 4:
+            elif difficulty == 4:
                 valid == True              
                 lyrical()
 
