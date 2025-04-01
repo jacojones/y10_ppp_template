@@ -40,17 +40,21 @@ def difficulty():
 
 """))
             if difficulty == 1:
+                valid == True
                 easy()
-                valid == True
+
             if difficulty == 2:
+                valid == True
                 avid()
-                valid == True
+
             if difficulty == 3:
+                valid == True          
                 fanboy()
-                valid == True
+
             if difficulty == 4:
+                valid == True              
                 lyrical()
-                valid == True
+
             else:
                 print("Invalid Input. Please input a value from 1-4.")
         except ValueError:
