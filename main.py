@@ -64,11 +64,12 @@ def easy():
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
 
 When you’re ready, type any character. """)
-    lyric = lyrics[randint(0, 2)]
+    num = randint(0,2)
+    lyric = lyrics[num]
     for i in range(4):
         x = 1
         guess = input(f"{x}. {lyric}")
-        if guess == song_name[lyric]:
+        if guess == song_name[num]:
             print("Correct!")
             score += 1
     print(lyric)
