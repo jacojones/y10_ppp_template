@@ -1,6 +1,7 @@
 # testing
 from random import randint
 from random import shuffle
+import sleep
 def menu():
     valid = False
     while valid == False:
@@ -62,6 +63,12 @@ def easy():
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
 
 When you’re ready, type any character. """)
+    lyric = lyrics[randint(0, 2)]
+    for i in range(4):
+        x = 1
+        guess = input(f"{x}. {lyric}")
+
+    print(lyric)
 
 def avid():
     input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
@@ -76,6 +83,8 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 When you're ready, type any character. """)
 def lyrical():
     print("This will be the lyrical genius difficulty")
+
+lyrics = ["song 1", "song 2", "song 3"]
 
 menu()
 # hello blah blah blah
