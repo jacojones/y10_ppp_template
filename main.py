@@ -1,7 +1,7 @@
 from random import randint
 from random import shuffle
 
-score = 0
+
 def menu():
     valid = False
     while valid == False:
@@ -19,6 +19,7 @@ def menu():
                 valid = True
                 print("ok")
             elif choice == 3:
+                print("Goodbye!")
                 quit
             else:
                 print("Invalid input. Please input a value inbetween 1-3.")
@@ -63,11 +64,12 @@ def easy():
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
 
 When you’re ready, type any character. """)
-    num = randint(0,2)
-    lyric = lyrics[num]
-    for i in range(4):
-        score = 0
-        x = 1
+    lyrics = ["song 1 lyrics", "song 2 lyrics", "song 3 lyrics", "song 4 lyrics", "song 5 lyrics"]
+    song_name = ["1", "2", "3", "4", "5"] 
+    score = 0
+    x = 1
+    for num in range(5):
+        lyric = lyrics[num]
         guess = input(f"{x}. {lyric}")
         if guess == song_name[num]:
             print("Correct!")
@@ -76,6 +78,13 @@ When you’re ready, type any character. """)
         else:
             x += 1
             print("Incorrect!")
+        print(f"Score:{score}")
+    try:
+        print(f"Your final score was {score}. You got {score/10} out of 5 correct.")
+    except ZeroDivisionError:
+        print(f"Your final score was {score}. You got 0 out of 5 correct")
+    menu()
+    return score
             
 
 
@@ -93,8 +102,6 @@ When you're ready, type any character. """)
 def lyrical():
     print("This will be the lyrical genius difficulty")
 
-lyrics = ["song 1", "song 2", "song 3"]
-song_name = ["1", "2", "3", "4"]
 menu()
 
 
