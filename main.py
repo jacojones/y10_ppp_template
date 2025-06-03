@@ -67,11 +67,14 @@ When you’re ready, type any character. """)
     num = randint(0,2)
     lyric = lyrics[num]
     for i in range(4):
+        score = 0
         x = 1
         guess = input(f"{x}. {lyric}")
         if guess == song_name[num]:
             print("Correct!")
-            global score
+            x += 1
+            score += 10
+            
 
 
 def avid():
@@ -91,6 +94,8 @@ def lyrical():
 lyrics = ["song 1", "song 2", "song 3"]
 song_name = ["1", "2", "3", "4"]
 menu()
+
+
 # hello blah blah blah
 
 # you are meant to auto commit
