@@ -1,4 +1,3 @@
-# testing
 from random import randint
 from random import shuffle
 
@@ -74,6 +73,9 @@ When you’re ready, type any character. """)
             print("Correct!")
             x += 1
             score += 10
+        else:
+            x += 1
+            print("Incorrect!")
             
 
 
