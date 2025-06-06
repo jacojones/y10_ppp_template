@@ -1,5 +1,5 @@
-from random import randint
-from random import shuffle
+import random
+from sklearn.utils import shuffle
 
 
 def menu():
@@ -36,7 +36,7 @@ def difficulty():
 
 2. Avid Listener: ☺️ A little more of a challenge with your lyrics slowly loading in within 5 seconds. 
 
-3. Fanboy: 😅 More challenging than the last two with a different game style. Your lyrics are scrambled around, and you’re given 10 seconds to guess what song.  
+3. Fanboy: 😅 More challenging than the last two with a different game style. Your lyrics are scrambled around, and you're given 10 seconds to guess what song.  
 
 4. Lyrical Genius: 🤯 For the best of the best, the most challenging of them all. Your lyrics are scrambled, slowly loads in, and you are given 10 seconds to guess the song. 
 
@@ -66,24 +66,39 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 When you’re ready, type any character. """)
     lyrics = ["song 1 lyrics", "song 2 lyrics", "song 3 lyrics", "song 4 lyrics", "song 5 lyrics"]
     song_name = ["1", "2", "3", "4", "5"] 
-    lyrics.shuffle()
+    indices = random.sample(range(len(lyrics)), len(lyrics))  # Get a shuffled list of indices
+    lyrics = [lyrics[i] for i in indices]  
+    song_name = [song_name[i] for i in indices]  
+    lyrics, song_name = shuffle(lyrics, song_name, random_state = 0) 
     score = 0
+    correct = 0
+    streak = 0
     x = 1
+    print(lyrics)
+    print(song_name)
     for num in range(5):
+        valid = False
         lyric = lyrics[num]
         guess = input(f"{x}. {lyric}")
-        if guess == song_name[num]:
-            print("Correct!")
-            x += 1
-            score += 10
-        else:
-            x += 1
-            print("Incorrect!")
+        while valid != True:
+            if guess == song_name[num]:
+                streak += 1
+                print(f"Correct! Streak: {streak}")
+                x += 1
+                score += 10
+                correct += 1
+                valid = True
+
+            else:
+                x += 1
+                print("Incorrect!")
+                valid = True
+                streak = 0
+            if streak == 3:
+                print("You're on fire!")
         print(f"Score:{score}")
-    try:
-        print(f"Your final score was {score}. You got {score/10} out of 5 correct.")
-    except ZeroDivisionError:
-        print(f"Your final score was {score}. You got 0 out of 5 correct")
+    print(f"Your final score was {score}. You got {correct} out of 5 correct.")
+
     menu()
     return score
             
