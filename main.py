@@ -20,7 +20,7 @@ def menu():
                 print("ok")
             elif choice == 3:
                 print("Goodbye!")
-                quit
+                break
             else:
                 print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
@@ -66,6 +66,7 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 When you’re ready, type any character. """)
     lyrics = ["song 1 lyrics", "song 2 lyrics", "song 3 lyrics", "song 4 lyrics", "song 5 lyrics"]
     song_name = ["1", "2", "3", "4", "5"] 
+    lyrics.shuffle()
     score = 0
     x = 1
     for num in range(5):
