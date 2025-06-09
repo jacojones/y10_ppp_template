@@ -95,6 +95,8 @@ When you’re ready, type any character. """)
                 valid = True
             elif guess == "h":
                 print(hints[x])
+                guess = input(f"{x}. {lyric}\n").lower()
+                score -= 5
                 pass
             else:
                 x += 1
