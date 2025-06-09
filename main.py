@@ -1,4 +1,5 @@
 import random
+from colorama import Fore, Back, Style
 from sklearn.utils import shuffle
 
 
@@ -58,18 +59,22 @@ def difficulty():
         except ValueError:
             print("Invalid Input. Please input a value from 1-4.")
 
+def leaderboard(name, score):
+    print("""Welcome to the leaderboard
+          Here you can view the top 10 people who have scored on this computer.""")
+
 
 def easy():
     input("""This version of guess-that-song, you are given a line of lyrics, and you must guess within 10 seconds.
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
 
 When you’re ready, type any character. """)
-    lyrics = ["song 1 lyrics", "song 2 lyrics", "song 3 lyrics", "song 4 lyrics", "song 5 lyrics"]
-    song_name = ["1", "2", "3", "4", "5"] 
-    indices = random.sample(range(len(lyrics)), len(lyrics))  # Get a shuffled list of indices
-    lyrics = [lyrics[i] for i in indices]  
-    song_name = [song_name[i] for i in indices]  
-    lyrics, song_name = shuffle(lyrics, song_name, random_state = 0) 
+    lyrics = ["You're takin' me out of the ordinary", "If the world was ending, I'd wanna be next to you", "I'm working late, 'cause I'm a singer", "Ain't with my type activities? Then don't you get involved", "And, oh, it's hard to see you, but I wish you were right here"]
+    song_name = ["ordinary", "die with a smile", "espresso", "tv off", "love me not"]
+    hints = ["Alex Warren", "Bruno Mars and Lady Gaga", "Sabrina Carpenter", "Kendrick Lamar", "Ravyn Lenae"]
+    x = random.sample(range(len(lyrics)), len(lyrics))  # Get a shuffled list of indices
+    lyrics = [lyrics[i] for i in x]  
+    song_name = [song_name[i] for i in x]  # reorded and reassigned back into the list
     score = 0
     correct = 0
     streak = 0
@@ -79,28 +84,30 @@ When you’re ready, type any character. """)
     for num in range(5):
         valid = False
         lyric = lyrics[num]
-        guess = input(f"{x}. {lyric}")
+        guess = input(f"{x}. {lyric}\n").lower()
         while valid != True:
             if guess == song_name[num]:
                 streak += 1
-                print(f"Correct! Streak: {streak}")
+                print(f"{Fore.GREEN}Correct! {Fore.RESET}Streak: {streak}")
                 x += 1
                 score += 10
                 correct += 1
                 valid = True
-
+            elif guess == "h":
+                print(hints[x])
+                pass
             else:
                 x += 1
-                print("Incorrect!")
+                print(Fore.RED + "Incorrect!" + Fore.RESET)
                 valid = True
                 streak = 0
             if streak == 3:
                 print("You're on fire!")
         print(f"Score:{score}")
     print(f"Your final score was {score}. You got {correct} out of 5 correct.")
-
+    name = input("Input your name: ")
     menu()
-    return score
+    return score, name
             
 
 
