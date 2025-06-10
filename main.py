@@ -116,41 +116,7 @@ The longer it takes you to guess, the lower the score you get.
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
 
 When you’re ready, type any character. """)
-    score = 0
-    correct = 0
-    streak = 0
-    x = 1
-    for num in range(5):
-        valid = False
-        lyric = lyrics[num]
-        for word in lyrics:            
-            guess = input(f"{x}. {word}  ").lower()
-        while valid != True:
-            if guess == song_name[num]:
-                streak += 1
-                print(f"{Fore.GREEN}Correct! {Fore.RESET}Streak: {streak}")
-                x += 1
-                score += 10
-                correct += 1
-                valid = True
-            elif guess == "h":
-                print(hints[x])
-                guess = input(f"{x}. {lyric}\n").lower()
-                score -= 5
-                pass
-            else:
-                x += 1
-                print(Fore.RED + "Incorrect!" + Fore.RESET)
-                valid = True
-                streak = 0
-            if streak == 3:
-                print("You're on fire!")
-        print(f"Score:{score}")
-    print(f"Your final score was {score}. You got {correct} out of 5 correct.")
-    name = input("Input your name: ")
-    menu()
-    return score, name    
-
+    
 def fanboy():
     input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
@@ -161,15 +127,17 @@ def lyrical():
 
 if __name__ == "__main__":
     choice = menu()
+    score, name = leaderboard()
+
     if choice == 1:
         difficulty()
     elif choice == 2:
-        leaderboard()
+        leaderboard(score, name)
     difficulty_option = difficulty()
     lyrics, song_name, guess = lyrics_data()
     if difficulty_option == 1:
         easy(lyrics, song_name, guess)
     elif difficulty_option == 2:
         avid(lyrics, song_name, guess)
-
+  
     
