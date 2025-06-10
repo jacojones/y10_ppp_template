@@ -41,13 +41,13 @@ def difficulty():
 4. Lyrical Genius: 🤯 For the best of the best, the most challenging of them all. Your lyrics are scrambled, slowly loads in, and you are given 10 seconds to guess the song. 
 
 """))
-            if difficulty == 1:
+            if difficulty_option == 1:
                 valid = True
-            elif difficulty == 2:
+            elif difficulty_option == 2:
                 valid = True
-            elif difficulty == 3:
+            elif difficulty_option == 3:
                 valid = True          
-            elif difficulty == 4:
+            elif difficulty_option == 4:
                 valid = True              
             else:
                 print("Invalid Input. Please input a value from 1-4.")
