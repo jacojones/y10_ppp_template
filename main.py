@@ -5,7 +5,6 @@ from sklearn.utils import shuffle
 
 def menu():
     valid = False
-    choice = 0
     while valid == False:
         try:
             choice = int(input("""Welcome to 🎤 Guess-that-song! 🎤
@@ -15,11 +14,9 @@ def menu():
 """))
             if choice == 1:
                 valid = True
-                choice = 1
 
             elif choice == 2:
                 valid = True
-                choice =2 
             elif choice == 3:
                 print("Goodbye!")
                 break
@@ -28,11 +25,12 @@ def menu():
         except ValueError:
             print("Invalid input. Please input a value inbetween 1-3.")
         return choice
+    
 def difficulty():
     valid = False
     while valid == False:
         try:
-            difficulty = int(input("""Choose a difficulty 
+            difficulty_option = int(input("""Choose a difficulty 
 
 1. Easy: 😴 Gives you a line of lyrics which you need to guess within 10 seconds. Hints are enabled which gives you the artist's name. 
 
@@ -45,21 +43,17 @@ def difficulty():
 """))
             if difficulty == 1:
                 valid = True
-                easy(lyrics, song_name, hints)
             elif difficulty == 2:
                 valid = True
-                avid()
             elif difficulty == 3:
                 valid = True          
-                fanboy()
             elif difficulty == 4:
                 valid = True              
-                lyrical()
             else:
                 print("Invalid Input. Please input a value from 1-4.")
         except ValueError:
             print("Invalid Input. Please input a value from 1-4.")
-
+        
 def leaderboard(name, score):
     print("""Welcome to the leaderboard
           Here you can view the top 10 people who have scored on this computer.""")
@@ -132,4 +126,13 @@ def lyrical():
     print("This will be the lyrical genius difficulty")
 
 if __name__ == "__main__":
-    menu()
+    choice = menu()
+    if choice == 1:
+        difficulty()
+    elif choice == 2:
+        leaderboard()
+    difficulty_option = difficulty()
+    if difficulty_option == 1:
+        easy()
+    lyric, song_name
+    
