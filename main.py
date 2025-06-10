@@ -5,6 +5,7 @@ from sklearn.utils import shuffle
 
 def menu():
     valid = False
+    choice = 0
     while valid == False:
         try:
             choice = int(input("""Welcome to 🎤 Guess-that-song! 🎤
@@ -14,11 +15,11 @@ def menu():
 """))
             if choice == 1:
                 valid = True
-                difficulty()
+                choice = 1
 
             elif choice == 2:
                 valid = True
-                print("ok")
+                choice =2 
             elif choice == 3:
                 print("Goodbye!")
                 break
@@ -26,7 +27,7 @@ def menu():
                 print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
             print("Invalid input. Please input a value inbetween 1-3.")
-
+        return choice
 def difficulty():
     valid = False
     while valid == False:
@@ -44,7 +45,7 @@ def difficulty():
 """))
             if difficulty == 1:
                 valid = True
-                easy()
+                easy(lyrics, song_name, hints)
             elif difficulty == 2:
                 valid = True
                 avid()
@@ -63,18 +64,21 @@ def leaderboard(name, score):
     print("""Welcome to the leaderboard
           Here you can view the top 10 people who have scored on this computer.""")
 
-
-def easy():
-    input("""This version of guess-that-song, you are given a line of lyrics, and you must guess within 10 seconds.
-If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
-
-When you’re ready, type any character. """)
+def lyrics():
     lyrics = ["You're takin' me out of the ordinary", "If the world was ending, I'd wanna be next to you", "I'm working late, 'cause I'm a singer", "Ain't with my type activities? Then don't you get involved", "And, oh, it's hard to see you, but I wish you were right here"]
     song_name = ["ordinary", "die with a smile", "espresso", "tv off", "love me not"]
     hints = ["Alex Warren", "Bruno Mars and Lady Gaga", "Sabrina Carpenter", "Kendrick Lamar", "Ravyn Lenae"]
     x = random.sample(range(len(lyrics)), len(lyrics))  # Get a shuffled list of indices
     lyrics = [lyrics[i] for i in x]  
     song_name = [song_name[i] for i in x]  # reorded and reassigned back into the list
+    return lyrics, song_name, hints
+
+def easy(lyrics, song_name, hints):
+    input("""This version of guess-that-song, you are given a line of lyrics, and you must guess within 10 seconds.
+If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
+
+When you’re ready, type any character. """)
+    
     score = 0
     correct = 0
     streak = 0
@@ -127,9 +131,5 @@ When you're ready, type any character. """)
 def lyrical():
     print("This will be the lyrical genius difficulty")
 
-menu()
-
-
-# hello blah blah blah
-
-# you are meant to auto commit
+if __name__ == "__main__":
+    menu()
