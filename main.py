@@ -120,11 +120,10 @@ When you’re ready, type any character. """)
     correct = 0
     streak = 0
     x = 1
-    song = 0
     for num in range(5):
         valid = False
         lyric = lyrics[num]
-        for word in lyrics[song]:            
+        for word in lyrics:            
             guess = input(f"{x}. {word}  ").lower()
         while valid != True:
             if guess == song_name[num]:
