@@ -58,7 +58,7 @@ def leaderboard(name, score):
     print("""Welcome to the leaderboard
           Here you can view the top 10 people who have scored on this computer.""")
 
-def lyrics():
+def lyrics_data():
     lyrics = ["You're takin' me out of the ordinary", "If the world was ending, I'd wanna be next to you", "I'm working late, 'cause I'm a singer", "Ain't with my type activities? Then don't you get involved", "And, oh, it's hard to see you, but I wish you were right here"]
     song_name = ["ordinary", "die with a smile", "espresso", "tv off", "love me not"]
     hints = ["Alex Warren", "Bruno Mars and Lady Gaga", "Sabrina Carpenter", "Kendrick Lamar", "Ravyn Lenae"]
@@ -132,7 +132,8 @@ if __name__ == "__main__":
     elif choice == 2:
         leaderboard()
     difficulty_option = difficulty()
+    lyrics, song_name, guess = lyrics_data()
     if difficulty_option == 1:
-        easy()
-    lyric, song_name
+        easy(lyrics, song_name, guess)
+
     
