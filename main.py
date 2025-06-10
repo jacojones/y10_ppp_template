@@ -132,10 +132,7 @@ def lyrical():
 if __name__ == "__main__":
     choice = menu()
 
-    if choice == 1:
-        difficulty()
-    elif choice == 2:
-        highest = 0
+  
     difficulty_option = difficulty()
     lyrics, song_name, guess = lyrics_data()
     if difficulty_option == 1:
