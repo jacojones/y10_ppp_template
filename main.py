@@ -78,8 +78,6 @@ When you’re ready, type any character. """)
     correct = 0
     streak = 0
     x = 1
-    print(lyrics)
-    print(song_name)
     for num in range(5):
         valid = False
         lyric = lyrics[num]
@@ -112,12 +110,46 @@ When you’re ready, type any character. """)
             
 
 
-def avid():
+def avid(lyrics, song_name, hints):
     input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
 The longer it takes you to guess, the lower the score you get. 
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
 
 When you’re ready, type any character. """)
+    score = 0
+    correct = 0
+    streak = 0
+    x = 1
+    for num in range(5):
+        valid = False
+        lyric = lyrics[num]
+        guess = input(f"{x}. {lyric}\n").lower()
+        while valid != True:
+            if guess == song_name[num]:
+                streak += 1
+                print(f"{Fore.GREEN}Correct! {Fore.RESET}Streak: {streak}")
+                x += 1
+                score += 10
+                correct += 1
+                valid = True
+            elif guess == "h":
+                print(hints[x])
+                guess = input(f"{x}. {lyric}\n").lower()
+                score -= 5
+                pass
+            else:
+                x += 1
+                print(Fore.RED + "Incorrect!" + Fore.RESET)
+                valid = True
+                streak = 0
+            if streak == 3:
+                print("You're on fire!")
+        print(f"Score:{score}")
+    print(f"Your final score was {score}. You got {correct} out of 5 correct.")
+    name = input("Input your name: ")
+    menu()
+    return score, name    
+
 def fanboy():
     input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
@@ -136,5 +168,7 @@ if __name__ == "__main__":
     lyrics, song_name, guess = lyrics_data()
     if difficulty_option == 1:
         easy(lyrics, song_name, guess)
+    elif difficulty_option == 2:
+        avid(lyrics, song_name, guess)
 
     
