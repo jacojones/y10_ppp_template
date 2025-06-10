@@ -56,8 +56,12 @@ def difficulty():
     return difficulty_option
         
 def leaderboard(name, score):
-    print("""Welcome to the leaderboard
-          Here you can view the top 10 people who have scored on this computer.""")
+    print(f"""Welcome to the leaderboard
+          At this time, you can only view the highest score of this session and their name.
+          {name}: {score}
+
+          What is currently in development:
+          You'll be able to view the top 10 people who have scored on this computer.""")
 
 def lyrics_data():
     lyrics = ["You're takin' me out of the ordinary", "If the world was ending, I'd wanna be next to you", "I'm working late, 'cause I'm a singer", "Ain't with my type activities? Then don't you get involved", "And, oh, it's hard to see you, but I wish you were right here"]
@@ -139,5 +143,8 @@ if __name__ == "__main__":
         easy(lyrics, song_name, guess)
     elif difficulty_option == 2:
         avid(lyrics, song_name, guess)
+    highest = 0
+    if score > highest:
+        highest = score
   
     
