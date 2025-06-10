@@ -89,7 +89,7 @@ When you’re ready, type any character. """)
         while valid != True:
             if guess == song_name[num]:
                 streak += 1
-                print(f"{Fore.GREEN}Correct! {Fore.RESET}Streak: {streak}")
+                print(f"{Fore.GREEN}Correct! ✅ {Fore.RESET}Streak: {streak}")
                 x += 1
                 score += 10
                 correct += 1
@@ -101,11 +101,11 @@ When you’re ready, type any character. """)
                 pass
             else:
                 x += 1
-                print(Fore.RED + "Incorrect!" + Fore.RESET)
+                print(f"{Fore.RED}Incorrect!{Fore.RESET} 😞")
                 valid = True
                 streak = 0
             if streak == 3:
-                print("You're on fire!")
+                print("You're on fire! 🔥")
         print(f"Score:{score}")
     print(f"Your final score was {score}. You got {correct} out of 5 correct.")
     name = input("Input your name: ")
@@ -130,15 +130,14 @@ def lyrical():
     print("This will be the lyrical genius difficulty")
 
 if __name__ == "__main__":
-    choice = menu()
-
-  
-    difficulty_option = difficulty()
-    lyrics, song_name, guess = lyrics_data()
-    if difficulty_option == 1:
-        easy(lyrics, song_name, guess)
-    elif difficulty_option == 2:
-        avid(lyrics, song_name, guess)
-
-  
     
+    choice = menu()
+    while choice != 3:
+        difficulty_option = difficulty()
+        lyrics, song_name, guess = lyrics_data()
+        if difficulty_option == 1:
+            easy(lyrics, song_name, guess)
+        elif difficulty_option == 2:
+            avid(lyrics, song_name, guess)
+    
+        
