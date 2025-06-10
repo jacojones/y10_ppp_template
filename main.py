@@ -131,20 +131,17 @@ def lyrical():
 
 if __name__ == "__main__":
     choice = menu()
-    score, name = leaderboard()
 
     if choice == 1:
         difficulty()
     elif choice == 2:
-        leaderboard(score, name)
+        highest = 0
     difficulty_option = difficulty()
     lyrics, song_name, guess = lyrics_data()
     if difficulty_option == 1:
         easy(lyrics, song_name, guess)
     elif difficulty_option == 2:
         avid(lyrics, song_name, guess)
-    highest = 0
-    if score > highest:
-        highest = score
+
   
     
