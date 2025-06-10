@@ -53,6 +53,7 @@ def difficulty():
                 print("Invalid Input. Please input a value from 1-4.")
         except ValueError:
             print("Invalid Input. Please input a value from 1-4.")
+    return difficulty_option
         
 def leaderboard(name, score):
     print("""Welcome to the leaderboard
