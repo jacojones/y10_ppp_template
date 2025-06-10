@@ -56,7 +56,7 @@ def difficulty():
     return difficulty_option
         
 def leaderboard(name, score):
-    print(f"""Welcome to the leaderboard
+    print(f"""Leaderboard 🏅
           At this time, you can only view the highest score of this session and their name.
           {name}: {score}
 
