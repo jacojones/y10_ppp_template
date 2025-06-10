@@ -24,7 +24,7 @@ def menu():
                 print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
             print("Invalid input. Please input a value inbetween 1-3.")
-        return choice
+    return choice
     
 def difficulty():
     valid = False
