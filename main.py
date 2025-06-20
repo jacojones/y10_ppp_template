@@ -17,9 +17,6 @@ def menu():
 
             elif choice == 2:
                 valid = True
-            elif choice == 3:
-                print("Goodbye!")
-                break
             else:
                 print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
@@ -128,17 +125,22 @@ When you're ready, type any character. """)
 def lyrical():
     print("This will be the lyrical genius difficulty")
 
-if __name__ == "__main__":
-    
-    choice = menu()
-    while choice != 3:
-        difficulty_option = difficulty()
-        lyrics, song_name, guess = lyrics_data()
-        if difficulty_option == 1:
-            easy(lyrics, song_name, guess)
-            menu()
-        elif difficulty_option == 2:
-            avid(lyrics, song_name, guess)
 
+if __name__ == "__main__":
+    while True:
+        choice = menu()
+        if choice == 3:
+            print("Goodbye!")
+            break  
+        difficulty_option = difficulty()
+        lyrics, song_name, hints = lyrics_data()
+        if difficulty_option == 1:
+            easy(lyrics, song_name, hints)
+        elif difficulty_option == 2:
+            avid(lyrics, song_name, hints)
+        elif difficulty_option == 3:
+            fanboy()
+        elif difficulty_option == 4:
+            lyrical()
     
         
