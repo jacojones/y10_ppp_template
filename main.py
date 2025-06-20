@@ -93,7 +93,7 @@ When you’re ready, type any character. """)
                 correct += 1
                 valid = True
             elif guess == "h":
-                print(hints[x])
+                print(hints[num])
                 guess = input(f"{x}. {lyric}\n").lower()
                 score -= 5
                 pass
@@ -109,7 +109,7 @@ When you’re ready, type any character. """)
     name = input("Input your name: ")
     return score, name
             
-            
+
 def avid(lyrics, song_name, hints):
     input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
 The longer it takes you to guess, the lower the score you get. 
