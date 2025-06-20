@@ -78,6 +78,7 @@ def print_slow(str):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(0.2)
+    
 
 
 def easy(lyrics, song_name, hints):
@@ -134,7 +135,7 @@ When you’re ready, type any character. """)
     for num in range(5):
         valid = False
         lyric = lyrics[num]
-        guess = input(f"{x}. {lyric}\n").lower()
+        guess = input(f"{x}. {print_slow(lyrics[num])}\n").lower()
         while valid != True:
             if guess == song_name[num]:
                 streak += 1
@@ -158,10 +159,10 @@ When you’re ready, type any character. """)
         print(f"Score:{score}")
     print(f"Your final score was {score}. You got {correct} out of 5 correct.")
     name = input("Input your name: ")
+
     return score, name
 
-    for song in range(5):
-        print_slow(lyrics[song])
+
     
 def fanboy():
     input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
