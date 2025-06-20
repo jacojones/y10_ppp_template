@@ -72,6 +72,14 @@ def lyrics_data():
     hints = [hints[i] for i in x]
     return lyrics, song_name, hints
 
+
+def print_slow(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.2)
+
+
 def easy(lyrics, song_name, hints):
     input("""This version of guess-that-song, you are given a line of lyrics, and you must guess within 10 seconds.
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score
@@ -119,11 +127,39 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 
 When you’re ready, type any character. """)
 
-    def print_slow(str):
-        for letter in str:
-            sys.stdout.write(letter)
-            sys.stdout.flush()
-            time.sleep(0.2)
+    score = 0
+    correct = 0
+    streak = 0
+    x = 1
+    for num in range(5):
+        valid = False
+        lyric = lyrics[num]
+        guess = input(f"{x}. {lyric}\n").lower()
+        while valid != True:
+            if guess == song_name[num]:
+                streak += 1
+                print(f"{Fore.GREEN}Correct! ✅ {Fore.RESET}Streak: {streak}")
+                x += 1
+                score += 10
+                correct += 1
+                valid = True
+            elif guess == "h":
+                print(hints[num])
+                guess = input(f"{x}. {lyric}\n").lower()
+                score -= 5
+                pass
+            else:
+                x += 1
+                print(f"{Fore.RED}Incorrect!{Fore.RESET} 😞")
+                valid = True
+                streak = 0
+            if streak == 3:
+                print("You're on fire! 🔥")
+        print(f"Score:{score}")
+    print(f"Your final score was {score}. You got {correct} out of 5 correct.")
+    name = input("Input your name: ")
+    return score, name
+
     for song in range(5):
         print_slow(lyrics[song])
     
