@@ -14,9 +14,10 @@ def menu():
 """))
             if choice == 1:
                 valid = True
-
             elif choice == 2:
                 valid = True
+            elif choice == 3:
+                break
             else:
                 print("Invalid input. Please input a value inbetween 1-3.")
         except ValueError:
