@@ -109,7 +109,6 @@ When you’re ready, type any character. """)
         print(f"Score:{score}")
     print(f"Your final score was {score}. You got {correct} out of 5 correct.")
     name = input("Input your name: ")
-    menu()
     return score, name
             
 
@@ -137,7 +136,9 @@ if __name__ == "__main__":
         lyrics, song_name, guess = lyrics_data()
         if difficulty_option == 1:
             easy(lyrics, song_name, guess)
+            menu()
         elif difficulty_option == 2:
             avid(lyrics, song_name, guess)
+
     
         
