@@ -109,8 +109,7 @@ When you’re ready, type any character. """)
     name = input("Input your name: ")
     return score, name
             
-
-
+            
 def avid(lyrics, song_name, hints):
     input("""This version of guess-that-song, your lyrics load slowly within 5 seconds, and you must guess within 10 seconds. 
 The longer it takes you to guess, the lower the score you get. 
