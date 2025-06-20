@@ -132,12 +132,12 @@ def lyrical():
 if __name__ == "__main__":
     
     choice = menu()
-    while choice != 3:
-        difficulty_option = difficulty()
-        lyrics, song_name, guess = lyrics_data()
-        if difficulty_option == 1:
-            easy(lyrics, song_name, guess)
-        elif difficulty_option == 2:
-            avid(lyrics, song_name, guess)
+
+    difficulty_option = difficulty()
+    lyrics, song_name, guess = lyrics_data()
+    if difficulty_option == 1:
+        easy(lyrics, song_name, guess)
+    elif difficulty_option == 2:
+        avid(lyrics, song_name, guess)
     
         
