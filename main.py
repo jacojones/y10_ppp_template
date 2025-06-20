@@ -1,6 +1,7 @@
 import random
 from colorama import Fore, Back, Style
 from sklearn.utils import shuffle
+import sys,time,random
 
 
 def menu():
@@ -117,6 +118,14 @@ The longer it takes you to guess, the lower the score you get.
 If you wish, you can get a hint which extends the time and gives you the artist's name. However, this does impact your final score.  
 
 When you’re ready, type any character. """)
+
+typing_speed = 50 #wpm
+def slow_type(t):
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+    print(lyrics)
     
 def fanboy():
     input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
