@@ -119,13 +119,13 @@ If you wish, you can get a hint which extends the time and gives you the artist'
 
 When you’re ready, type any character. """)
 
-typing_speed = 50 #wpm
-def slow_type(t):
-    for l in t:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed)
-    print(lyrics)
+    def print_slow(str):
+        for letter in str:
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+            time.sleep(0.2)
+    for song in range(5):
+        print_slow(lyrics[song])
     
 def fanboy():
     input("""This version of guess-that-song, your lyrics are scrambled, and you must guess within 10 seconds. The longer it takes you to guess, the lower the score you get. 
