@@ -67,6 +67,7 @@ def lyrics_data():
     x = random.sample(range(len(lyrics)), len(lyrics))  # Get a shuffled list of indices
     lyrics = [lyrics[i] for i in x]  
     song_name = [song_name[i] for i in x]  # reorded and reassigned back into the list
+    hints = [hints[i] for i in x]
     return lyrics, song_name, hints
 
 def easy(lyrics, song_name, hints):
