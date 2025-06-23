@@ -132,13 +132,11 @@ When you’re ready, type any character. """)
     correct = 0
     streak = 0
     x = 1
-    time = 0
     round_score = 10
     for num in range(5):
         valid = False
         lyric = lyrics[num]
-        print_slow(lyrics[num])
-        guess = input(f"\n").lower()
+        guess = input(f"{print_slow(lyrics[num])}\n").lower()
         while valid != True:
             while round_score > 0:
                 time.sleep(1)
