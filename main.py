@@ -133,14 +133,14 @@ When you’re ready, type any character. """)
     streak = 0
     x = 1
     time = 0
-    round_score = 0
+    round_score = 10
     for num in range(5):
         valid = False
         lyric = lyrics[num]
         print_slow(lyrics[num])
         guess = input(f"\n").lower()
         while valid != True:
-            while round_score > 11:
+            while round_score > 0:
                 time.sleep(1)
                 round_score -= 1
             if guess == song_name[num]:
@@ -153,7 +153,7 @@ When you’re ready, type any character. """)
             elif guess == "h":
                 print(hints[num])
                 guess = input(f"{x}. {lyric}\n").lower()
-                score -= 5
+                score -= round_score
                 pass
             else:
                 x += 1
