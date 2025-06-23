@@ -6,7 +6,7 @@ import sys,time,random
 
 def menu():
     valid = False
-    print("""
+    print(r"""
                                                                                                                                                                      
                                                                                                                                                                      
   ,----..                                                              ___      ,---,                   ___              .--.--.                                     
