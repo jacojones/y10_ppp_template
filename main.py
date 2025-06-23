@@ -140,7 +140,7 @@ When you’re ready, type any character. """)
         print_slow(lyrics[num])
         guess = input(f"\n").lower()
         while valid != True:
-            while score > 11:
+            while round_score > 11:
                 time.sleep(1)
                 round_score -= 1
             if guess == song_name[num]:
