@@ -1,7 +1,8 @@
 import random
 from colorama import Fore, Back, Style
 from sklearn.utils import shuffle
-import sys,time,random
+import sys
+import time
 
 
 def menu():
